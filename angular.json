@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "4fc95a49-010e-4159-992b-7ad58b25f5c7"
+    "analytics": "4fc95a49-010e-4159-992b-7ad58b25f5c7",
+    "defaultCollection": "@datorama/akita"
   },
   "version": 1,
   "newProjectRoot": "projects",
