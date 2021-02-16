@@ -1,4 +1,4 @@
 export interface EventSummary {
-  resourceURI?: string;
-  name?: string;
+  resourceURI: string;
+  name: string;
 }

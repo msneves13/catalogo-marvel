@@ -1,0 +1,27 @@
+@import '../styles/tools/responsiveness';
+
+:host.app-root {
+  height: 100%;
+  display: grid;
+  grid-template:
+    'header' 5em
+    'main' 1fr
+    'footer' 5em;
+
+  & > header {
+    z-index: 1;
+    grid-area: header;
+    position: fixed;
+    height: 5em;
+    width: 100%;
+  }
+
+  & > main {
+    grid-area: main;
+  }
+
+  & > footer {
+    z-index: 1;
+    grid-area: footer;
+  }
+}

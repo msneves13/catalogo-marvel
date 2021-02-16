@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { faBookOpen, faMask } from '@fortawesome/free-solid-svg-icons';
 
 const routes: Routes = [
   {
@@ -12,33 +11,35 @@ const routes: Routes = [
   {
     path: 'comics',
     loadChildren: () =>
-      import('./features/pages/comic-page/comic-page.module').then(
-        (m) => m.ComicPageModule
+      import('./features/pages/comic/comic-page/comic-page.module').then(
+        m => m.ComicPageModule,
       ),
-    pathMatch: 'full',
     data: {
       label: 'Comics',
+      icon: faBookOpen,
     },
   },
   {
     path: 'characters',
     loadChildren: () =>
-      import('./features/pages/character-page/character-page.module').then(
-        (m) => m.CharacterPageModule
-      ),
-    pathMatch: 'full',
+      import(
+        './features/pages/character/character-page/character-page.module'
+      ).then(m => m.CharacterPageModule),
     data: {
       label: 'Characters',
+      icon: faMask,
     },
   },
   {
     path: '**',
-    component: NotFoundComponent,
+    redirectTo: 'characters',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' })],
+  imports: [
+    RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

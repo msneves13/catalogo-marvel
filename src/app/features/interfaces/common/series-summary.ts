@@ -1,4 +1,4 @@
 export interface SeriesSummary {
-  resourceURI?: string;
-  name?: string;
+  resourceURI: string;
+  name: string;
 }

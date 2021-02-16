@@ -1,0 +1,18 @@
+<section class="wrapper" *ngIf="(comic$ | async) as comic">
+  <figure class="image">
+    <div [ngStyle]="{'background-image': 'url(' + (thumbnail$ | async)  + ')'}"></div>
+  </figure>
+  <div class="title-container">
+    <h1>{{ comic.title }}</h1>
+  </div>
+  <div class="synopsis-container">
+    <h1>Synopsis</h1>
+    <p>{{ comic.description ? comic.description : emptyMessage }}</p>
+  </div>
+  <div class="recommendation-container">
+    <h1>Recommended Characters</h1>
+    <app-character-card class="app-character-card" *ngFor="let character of recommendedCharacters$ | async"
+      [character]="character" (clicked)="setActiveCharacter($event)">
+    </app-character-card>
+  </div>
+</section>

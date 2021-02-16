@@ -1,0 +1,19 @@
+<section *ngIf="(characters$ | async) as characters">
+  <div class="input-wrapper">
+    <input placeholder="Search" [formControl]="searchControl">
+    <fa-icon class="input-icon" [icon]="faSearch"></fa-icon>
+  </div>
+  <div class="wrapper">
+    <app-character-card [routerLink]="'details/' + character.id" *ngFor="let character of characters$ |async" [character]="character">
+    </app-character-card>
+  </div>
+  <div class="button-wrapper">
+    <button (click)="previousPage()">
+      BACK
+    </button>
+    <span> {{ currentPage + 1 }} of {{ totalPages }} </span>
+    <button (click)="nextPage()">
+      NEXT
+    </button>
+  </div>
+</section>

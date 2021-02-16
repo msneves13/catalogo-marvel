@@ -1,0 +1,22 @@
+@import '/src/styles/colors/variables.scss';
+
+section {
+  height: 100%;
+  display: grid;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & > div {
+    display: grid;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 85%, rgba(0, 0, 0, 1) 100%);
+
+    & > h1 {
+      color: $white;
+      font-size: 12pt;
+      text-align: center;
+      line-height: 1.2;
+      margin: auto 10% 10%;
+    }
+  }
+}

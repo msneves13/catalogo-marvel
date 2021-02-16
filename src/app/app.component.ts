@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { CharacterService } from './features/services/character.service';
-import { ComicService } from './features/services/comic.service';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +6,9 @@ import { ComicService } from './features/services/comic.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'catalogo-marvel';
+  @HostBinding('class') class = 'app-root';
 
   constructor() {}
-
-  public readonly pageIndex = 0;
-  public readonly pageSize = 10;
 
   ngOnInit() {}
 }

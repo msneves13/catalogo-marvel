@@ -1,9 +1,13 @@
-<header>
-  <nav>
-    <ul>
-      <li *ngFor="let route of routes">
-        <a [routerLink]="route.path">{{ route.data?.label }}</a>
+<nav class="app-navbar">
+  <div class="container">
+    <fa-icon class="menu-icon" (click)="toggleMenu()" [icon]="faBars"></fa-icon>
+    <a routerLink='' class="nav-logo">CATALOG</a>
+    <ul class="nav-ul" [ngClass]="{'visible': show}">
+      <li *ngFor="let route of routes" class="nav-link">
+        <a [routerLink]="route.path">
+          <fa-icon [icon]="route.data?.icon"></fa-icon>{{ route.data?.label }}
+        </a>
       </li>
     </ul>
-  </nav>
-</header>
+  </div>
+</nav>

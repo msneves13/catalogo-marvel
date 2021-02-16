@@ -1,0 +1,160 @@
+/* stylelint-disable selector-type-no-unknown */
+/* stylelint-disable rscss/no-descendant-combinator */
+/* stylelint-disable selector-pseudo-element-no-unknown */
+
+@import '/src/styles/colors/variables.scss';
+@import '/src/styles/tools/responsiveness.scss';
+
+section {
+  &.wrapper {
+    display: grid;
+    height: 100%;
+    position: relative;
+    grid-template-areas:
+      'image'
+      'title'
+      'synopsis'
+      'recommendation';
+    grid-template-rows: min-content auto auto min-content;
+
+    @include respond-to('md') {
+      display: grid;
+      height: 100%;
+      position: relative;
+      grid-template-areas:
+        'image recomendation'
+        'title synopsis';
+      grid-template-columns: 0.3fr 1fr;
+      grid-template-rows: 1fr 0.5fr;
+      width: 100%;
+    }
+
+    & > figure.image {
+      padding: 2em;
+
+      @include respond-to('md') {
+        padding: unset;
+        grid-area: image;
+        margin: auto;
+        width: 100%;
+      }
+
+      & > div {
+        height: 400px;
+        position: relative;
+        display: block;
+        margin: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    & > div.title-container {
+      padding: 1em;
+      display: grid;
+      background-color: $primary;
+
+      @include respond-to('md') {
+        grid-area: title;
+      }
+
+      & > h1 {
+        color: $white;
+        font-size: 18pt;
+        text-transform: uppercase;
+        margin: auto;
+        letter-spacing: 0.25em;
+        text-align: center;
+      }
+    }
+
+    & > div.synopsis-container {
+      padding: 1em;
+      color: $white;
+      background-color: $dark;
+      display: grid;
+      row-gap: 18pt;
+
+      @include respond-to('md') {
+        grid-area: synopsis;
+      }
+
+      & > h1 {
+        color: $white;
+        font-size: 14pt;
+        text-transform: uppercase;
+        margin: auto;
+        letter-spacing: 0.25em;
+        text-align: center;
+      }
+
+      & > p {
+        color: $white;
+        font-size: 12pt;
+        text-align: justify;
+        line-height: 1.5;
+
+        @include respond-to('md') {
+          margin: 0 20%;
+        }
+      }
+    }
+
+    & > div.recommendation-container {
+      display: grid;
+      background-color: $darkest;
+      grid-auto-rows: minmax(100px, 1fr);
+
+      @include respond-to('md') {
+        grid-area: recomendation;
+        display: grid;
+        background-color: $darkest;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr;
+        grid-template-areas:
+          '. text .'
+          'a b c';
+
+        & > app-character-card:nth-of-type(1) {
+          grid-area: a;
+        }
+
+        & > app-character-card:nth-of-type(2) {
+          grid-area: b;
+        }
+
+        & > app-character-card:nth-of-type(3) {
+          grid-area: c;
+        }
+      }
+
+      & > h1 {
+        margin: auto;
+        color: $white;
+        font-size: 14pt;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        text-align: center;
+
+        @include respond-to('md') {
+          grid-area: text;
+        }
+      }
+    }
+  }
+}
+
+:host::ng-deep .app-character-card {
+  section {
+    & > div > h1 {
+      margin: auto !important;
+
+      @include respond-to('md') {
+        margin: auto 10% 10% !important;
+        font-size: 18pt !important;
+        text-transform: uppercase !important;
+      }
+    }
+  }
+}

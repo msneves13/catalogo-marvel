@@ -1,0 +1,13 @@
+@import '../settings/breakpoint';
+
+@mixin respond-to($breakpoint) {
+  @if map-get($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'There is no size defined for `#{$breakpoint}` in the `$breakpoints` map.';
+  }
+}

@@ -3,20 +3,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
-import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +23,7 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
     HttpClientModule,
     AkitaNgRouterStoreModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

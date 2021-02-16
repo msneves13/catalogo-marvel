@@ -1,0 +1,19 @@
+<section *ngIf="(comics$ | async) as comics">
+  <div class="input-wrapper">
+    <input placeholder="Search" [formControl]="searchControl">
+    <fa-icon class="input-icon" [icon]="faSearch"></fa-icon>
+  </div>
+  <div class="wrapper">
+    <app-comic-card [routerLink]="'details/' + comic.id" *ngFor="let comic of comics$ |async" [comic]="comic">
+    </app-comic-card>
+  </div>
+  <div class="button-wrapper">
+    <button (click)="previousPage()">
+      BACK
+    </button>
+    <span> {{ currentPage + 1 }} of {{ totalPages }} </span>
+    <button (click)="nextPage()">
+      NEXT
+    </button>
+  </div>
+</section>

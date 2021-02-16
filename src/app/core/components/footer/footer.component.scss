@@ -1,0 +1,18 @@
+@import '/src/styles/colors/variables.scss';
+
+.app-footer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: $black;
+
+  & > .row {
+    margin: auto;
+
+    & > a {
+      font-size: 12pt;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

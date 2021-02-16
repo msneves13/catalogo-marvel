@@ -1,4 +1,4 @@
 export interface ComicSummary {
-  resourceURI?: string;
-  name?: string;
+  resourceURI: string;
+  name: string;
 }
