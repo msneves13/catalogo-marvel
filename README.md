@@ -1,27 +1,23 @@
-# CatalogoMarvel
+# Marvel Catalog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+Marvel Catalog é uma aplicação responsiva desenvolvida no Framework Angular CLI que permite pesquisar por personagens e quadrinhos da marvel.
 
-## Development server
+## Acesso
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+A aplicação pode ser acessada através da URL:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+https://catalogo-marvel.vercel.app/
+```
+## Informações
+A parte de layout foi feita majoritariamente com CSS Grid. E na parte de script, foi utilizada programação reativa (RXJS), gerenciamento de estado (Akita).
+## Imagens Desktop
+### Listagem
+![alt text](https://i.imgur.com/4L7bynF.png)
+### Detalhes
+![alt text](https://i.imgur.com/e841def.png)
+## Imagens Mobile
+### Listagem
+![alt text](https://i.imgur.com/cUm3wDH_d.png)
+### Detalhes
+![alt text](https://i.imgur.com/JyqLhcp_d.png)
